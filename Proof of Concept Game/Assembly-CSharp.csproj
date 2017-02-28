@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\DetermineTextDisplay.cs" />
      <Compile Include="Assets\Scripts\GenerateText.cs" />
+     <Compile Include="Assets\Scripts\StringsToDisplay.cs" />
+     <Compile Include="Assets\Scripts\TextBoxScript.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>

@@ -10,19 +10,29 @@ public class GenerateText : MonoBehaviour {
 	private string bButton;
 	private string xButton;
 	private string yButton;
-	public KeyCode testButton;
+	public bool firstChoice = true;
+	GameObject dialogueHolder;
+	DetermineTextDisplay dtd;
+	StringsToDisplay s2d;
+	public GameObject currentAScene;
+	public GameObject generatedText; 
+	TextBoxScript tbs;
 
 	// Use this for initialization
 	void Start () {
-
-
-		
+		dialogueHolder = GameObject.Find ("Dialogue Holder");
+		dtd = dialogueHolder.GetComponent<DetermineTextDisplay> ();
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
+		generatedText = dtd.slot0;
+		tbs = generatedText.GetComponent<TextBoxScript> ();
+		currentAScene = dtd.currentAScene; 
 		turnControls ();
-		test ();
+		select ();
 	}
 
 	void turnControls ()
@@ -33,26 +43,56 @@ public class GenerateText : MonoBehaviour {
 		yButton = "Y Button_P" + playersTurn;
 	}
 
-	void test ()
+	void select ()
 	{
-		if (Input.GetButtonDown (aButton))
+		if (dtd.aSceneNumber == 0) 
 		{
-			Debug.Log ("A Button, Player" + playersTurn);
-		}
 
-		if (Input.GetButtonDown (bButton))
-		{
-			Debug.Log ("B Button, Player" + playersTurn);
-		}
+			if (firstChoice == true) 
+			{
 
-		if (Input.GetButtonDown (xButton))
-		{
-			Debug.Log ("X Button, Player" + playersTurn);
-		}
+				if (Input.GetButtonDown (aButton)) 
+				{
+					tbs.determineText (2);
+					shiftText ();
+					playersTurn = 2;
 
-		if (Input.GetButtonDown (yButton))
-		{
-			Debug.Log ("Y Button, Player" + playersTurn);
+				}
+
+				if (Input.GetButtonDown (bButton)) 
+				{
+					tbs.determineText (6);
+					shiftText ();
+					playersTurn = 2;
+
+				}
+
+				if (Input.GetButtonDown (xButton)) 
+				{
+					tbs.determineText (10);
+					shiftText ();
+					playersTurn = 2;
+				}
+
+				if (Input.GetButtonDown (yButton)) 
+				{
+					tbs.determineText (14);
+					shiftText ();
+					playersTurn = 2;
+				}
+		
+			}
 		}
 	}
+
+	void shiftText ()
+	{
+		firstChoice = false; 
+		tbs.ownerNum = playersTurn;
+		dtd.slot0 = dtd.slot1;
+		dtd.slot1 = dtd.slot2;
+		dtd.slot2 = dtd.slot3;
+		dtd.slot3 = dtd.slot1;
+	}
+		
 }
