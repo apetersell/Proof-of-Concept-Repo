@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{CEF4BBE5-11CA-F3E4-57E4-E225463CFB40}") = "Proof of Concept Game", "Assembly-CSharp.csproj", "{FF617BF3-D0E1-0863-CCD8-8D5BDECD2C94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF617BF3-D0E1-0863-CCD8-8D5BDECD2C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF617BF3-D0E1-0863-CCD8-8D5BDECD2C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF617BF3-D0E1-0863-CCD8-8D5BDECD2C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF617BF3-D0E1-0863-CCD8-8D5BDECD2C94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
