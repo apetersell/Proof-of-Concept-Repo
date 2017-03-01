@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/A Stage (David).unity
-  isLoaded: 1
-  isActive: 1
