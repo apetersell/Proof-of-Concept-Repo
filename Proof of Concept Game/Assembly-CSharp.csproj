@@ -46,15 +46,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\DetermineTextDisplay.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Continuity.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\Scripts\Dialogue\DialogueImplementation.cs" />
      <Compile Include="Assets\Scripts\Dialogue\OptionButton.cs" />
      <Compile Include="Assets\Scripts\Dialogue\SimpleJSON.cs" />
-     <Compile Include="Assets\Scripts\GenerateText.cs" />
-     <Compile Include="Assets\Scripts\StringsToDisplay.cs" />
-     <Compile Include="Assets\Scripts\TextBoxScript.cs" />
+     <Compile Include="Assets\Scripts\Dumb Stuff Andrew Tried\DetermineTextDisplay.cs" />
+     <Compile Include="Assets\Scripts\Dumb Stuff Andrew Tried\GenerateText.cs" />
+     <Compile Include="Assets\Scripts\Dumb Stuff Andrew Tried\StringsToDisplay.cs" />
+     <Compile Include="Assets\Scripts\Dumb Stuff Andrew Tried\TextBoxScript.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
