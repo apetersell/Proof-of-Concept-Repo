@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.SceneManagement;
 
 public class DialogueImplementation : MonoBehaviour
 {
@@ -68,8 +69,9 @@ public class DialogueImplementation : MonoBehaviour
 
 	public IEnumerator EndText()
 	{
-		//Global.textbox.Hide();
-		uiText.text = "";
+        //Global.textbox.Hide();
+        //uiText.text = "";
+        SceneManager.LoadScene("HallwayRun");
 		yield break;
 	}
 
@@ -226,8 +228,7 @@ public class DialogueImplementation : MonoBehaviour
 	{
 		if (!dialogue.running)
 		{
-
-				dialogue.Run(textToRun);
+			dialogue.Run(textToRun);
 		}
 	}
 }

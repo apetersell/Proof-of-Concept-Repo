@@ -1,0 +1,102 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "Hey Bitch\n[[Got to Dash|Player1 Dash]]\n[[I'ma Fireball you|Player1 FireBall]]\n[[Oh this? It's my shield.|Player1 Shield]]\n[[*SINGS WILDLY*|Player1 Sing]]",
+		"position": {
+			"x": 185,
+			"y": -403
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Player1 Dash",
+		"tags": "",
+		"body": "I'm gonna Dash you in the tit.\n[[I Choose Sing|Player2 Sing]]\n[[I Choose Shield|Player2 Shield]]\n[[I Choose Fireball|Player2 Fireball]]",
+		"position": {
+			"x": -379,
+			"y": -118
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Player1 FireBall",
+		"tags": "",
+		"body": "I'ma Fireball you!\n[[I Choose Dash|Player2 Dash]]\n[[I Choose Shield|Player2 Shield]]\n[[I Choose Sing|Player2 Sing]]",
+		"position": {
+			"x": -13,
+			"y": -122
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Player1 Shield",
+		"tags": "",
+		"body": "Oh this? It's my shield.\n[[I Choose Sing|Player2 Sing]]\n[[I Choose Dash|Player2 Dash]]\n[[I Choose Fireball|Player2 Fireball]]",
+		"position": {
+			"x": 317,
+			"y": -140
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Player1 Sing",
+		"tags": "",
+		"body": "\"I BELIEVE IN A THING CALLED LOVE\"\n[[I Choose Dash|Player2 Dash]]\n[[I Choose Shield|Player2 Shield]]\n[[I Choose Fireball|Player2 Fireball]]",
+		"position": {
+			"x": 632,
+			"y": -160
+		},
+		"colorID": 0
+	},
+	{
+		"title": "CloseText",
+		"tags": "",
+		"body": "The girls looked at each other, knowing that the first girl to class would get to sit next to senpai.",
+		"position": {
+			"x": 176,
+			"y": 475
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Player2 Dash",
+		"tags": "",
+		"body": "I'm gonna dash you right in the face.\n[[Oh no, class! I have to get to Senpai!|CloseText]]",
+		"position": {
+			"x": -361,
+			"y": 196
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Player2 Fireball",
+		"tags": "",
+		"body": "I'm going to burn you to death\n[[Oh no, class! I have to get to Senpai!|CloseText]]",
+		"position": {
+			"x": -11,
+			"y": 203
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Player2 Sing",
+		"tags": "",
+		"body": "You're voice is...interesting. Maybe I can teach you to sing.\n[[Oh no, class! I have to get to Senpai!|CloseText]]",
+		"position": {
+			"x": 328,
+			"y": 197
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Player2 Shield",
+		"tags": "",
+		"body": "Yes. I have a shield. Yes. I will hurt you with it. \n[[Oh no, class! I have to get to Senpai!|CloseText]]",
+		"position": {
+			"x": 649,
+			"y": 187
+		},
+		"colorID": 0
+	}
+]
