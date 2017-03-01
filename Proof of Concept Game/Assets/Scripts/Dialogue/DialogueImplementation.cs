@@ -226,15 +226,8 @@ public class DialogueImplementation : MonoBehaviour
 	{
 		if (!dialogue.running)
 		{
-			textToRun = GUI.TextArea(new Rect(0, 0, 600, 350), textToRun);
-			if (GUI.Button(new Rect(610, 0, 100, 50), "Test Run"))
-			{
+
 				dialogue.Run(textToRun);
-			}
-			if (GUI.Button(new Rect(610, 60, 100, 50), "Clear"))
-			{
-				textToRun = "";
-			}
 		}
 	}
 }
