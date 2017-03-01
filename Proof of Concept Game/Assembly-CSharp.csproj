@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Dumb Stuff Andrew Tried\GenerateText.cs" />
      <Compile Include="Assets\Scripts\Dumb Stuff Andrew Tried\StringsToDisplay.cs" />
      <Compile Include="Assets\Scripts\Dumb Stuff Andrew Tried\TextBoxScript.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\ScriptsFromProto\Abilities\Ability.cs" />
      <Compile Include="Assets\Scripts\ScriptsFromProto\Abilities\Attack.cs" />
      <Compile Include="Assets\Scripts\ScriptsFromProto\Abilities\BasicAttack.cs" />
