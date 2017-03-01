@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour {
     public GameObject player2;
 
     public GameObject gameInfo;
-    public List<string> playerToys;
 
     private Dictionary<string, Ability.Type> toyAbilityDict;
 
@@ -18,7 +17,6 @@ public class GameManager : MonoBehaviour {
     void Start () {
 
         CreateToyAbilityDict();
-        playerToys = new List<string>();
 
     }
 	
@@ -58,9 +56,13 @@ public class GameManager : MonoBehaviour {
 
     public void AddShieldToList()
     {
-        if(playerToys.Count < 2)
+        if(player1.GetComponent<PlayerController>().playerToys.Count == 0)
         {
-            playerToys.Add("Cat");
+            player1.GetComponent<PlayerController>().playerToys.Add("Cat");
+        }
+        if (player2.GetComponent<PlayerController>().playerToys.Count == 1)
+        {
+            player2.GetComponent<PlayerController>().playerToys.Add("Cat");
         }
 
     }
@@ -68,27 +70,39 @@ public class GameManager : MonoBehaviour {
     public void AddLungeToList()
     {
 
-        if(playerToys.Count < 2)
+        if (player1.GetComponent<PlayerController>().playerToys.Count == 0)
         {
-            playerToys.Add("Dog");
+            player1.GetComponent<PlayerController>().playerToys.Add("Dog");
+        }
+        if (player2.GetComponent<PlayerController>().playerToys.Count == 1)
+        {
+            player2.GetComponent<PlayerController>().playerToys.Add("Dog");
         }
 
     }
 
     public void AddFireballToList()
     {
-        if(playerToys.Count < 2)
+        if (player1.GetComponent<PlayerController>().playerToys.Count == 0)
         {
-            playerToys.Add("Calculator");
+            player1.GetComponent<PlayerController>().playerToys.Add("Calculator");
+        }
+        if (player2.GetComponent<PlayerController>().playerToys.Count == 1)
+        {
+            player2.GetComponent<PlayerController>().playerToys.Add("Calculator");
         }
 
     }
 
     public void AddSingToList()
     {
-        if(playerToys.Count < 2)
+        if (player1.GetComponent<PlayerController>().playerToys.Count == 0)
         {
-            playerToys.Add("Kazoo");
+            player1.GetComponent<PlayerController>().playerToys.Add("Kazoo");
+        }
+        if (player2.GetComponent<PlayerController>().playerToys.Count == 1)
+        {
+            player2.GetComponent<PlayerController>().playerToys.Add("Kazoo");
         }
 
     }
