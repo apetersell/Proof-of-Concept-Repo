@@ -12,7 +12,7 @@
 	{
 		"title": "Player1 Dash",
 		"tags": "",
-		"body": "I'm gonna Dash you in the tit.\n[[I Choose Sing|Player2 Sing]]\n[[I Choose Shield|Player2 Shield]]\n[[I Choose Fireball|Player2 Fireball]]",
+		"body": "I'm gonna Dash you in the tit.\n[[I choose Dash]]\n[[I Choose Fireball|Player2 Fireball]]\n[[I Choose Shield|Player2 Shield]]\n[[I Choose Sing|Player2 Sing]]\n\n\n",
 		"position": {
 			"x": -379,
 			"y": -118
@@ -22,7 +22,7 @@
 	{
 		"title": "Player1 FireBall",
 		"tags": "",
-		"body": "I'ma Fireball you!\n[[I Choose Dash|Player2 Dash]]\n[[I Choose Shield|Player2 Shield]]\n[[I Choose Sing|Player2 Sing]]",
+		"body": "I'ma Fireball you!\n[[I Choose Dash|Player2 Dash]]\n[[I choose Fireball]]\n[[I Choose Shield|Player2 Shield]]\n[[I Choose Sing|Player2 Sing]]\n",
 		"position": {
 			"x": -13,
 			"y": -122
@@ -32,7 +32,7 @@
 	{
 		"title": "Player1 Shield",
 		"tags": "",
-		"body": "Oh this? It's my shield.\n[[I Choose Sing|Player2 Sing]]\n[[I Choose Dash|Player2 Dash]]\n[[I Choose Fireball|Player2 Fireball]]",
+		"body": "Oh this? It's my shield.\n[[I Choose Dash|Player2 Dash]]\n[[I Choose Fireball|Player2 Fireball]]\n[[I choose Shield]]\n[[I Choose Sing|Player2 Sing]]\n",
 		"position": {
 			"x": 317,
 			"y": -140
@@ -42,7 +42,7 @@
 	{
 		"title": "Player1 Sing",
 		"tags": "",
-		"body": "\"I BELIEVE IN A THING CALLED LOVE\"\n[[I Choose Dash|Player2 Dash]]\n[[I Choose Shield|Player2 Shield]]\n[[I Choose Fireball|Player2 Fireball]]",
+		"body": "\"I BELIEVE IN A THING CALLED LOVE\"\n[[I Choose Dash|Player2 Dash]]\n[[I Choose Fireball|Player2 Fireball]]\n[[I Choose Shield|Player2 Shield]]\n[[I choose Sing]]",
 		"position": {
 			"x": 632,
 			"y": -160

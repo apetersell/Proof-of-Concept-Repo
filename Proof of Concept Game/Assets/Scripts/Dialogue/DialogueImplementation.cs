@@ -95,6 +95,11 @@ public class DialogueImplementation : MonoBehaviour
 		currentOption = 3;
 	}
 
+    public void SelectOption04()
+    {
+        currentOption = 4;
+    }
+
 	public IEnumerator RunOptions(List<Dialogue.Option> options)
 	{
 		dialogue.SetCurrentOption(0);
