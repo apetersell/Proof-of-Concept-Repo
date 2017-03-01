@@ -58,21 +58,38 @@ public class GameManager : MonoBehaviour {
 
     public void AddShieldToList()
     {
-        playerToys.Add("Cat");
+        if(playerToys.Count < 2)
+        {
+            playerToys.Add("Cat");
+        }
+
     }
 
     public void AddLungeToList()
     {
-        playerToys.Add("Dog");
+
+        if(playerToys.Count < 2)
+        {
+            playerToys.Add("Dog");
+        }
+
     }
 
     public void AddFireballToList()
     {
-        playerToys.Add("Calculator");
+        if(playerToys.Count < 2)
+        {
+            playerToys.Add("Calculator");
+        }
+
     }
 
     public void AddSingToList()
     {
-        playerToys.Add("Kazoo");
+        if(playerToys.Count < 2)
+        {
+            playerToys.Add("Kazoo");
+        }
+
     }
 }
