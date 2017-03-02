@@ -9,13 +9,15 @@ public class AStageInputs: MonoBehaviour {
 	private string bButton;
 	private string xButton;
 	private string yButton;
-	public bool A = true; 
-	public bool A2;  
-	public bool A2Prime;  
-	public bool canSelect; 
+	public static bool A = true; 
+	public static bool A2;  
+	public static bool A2Prime;  
+	public static bool canSelect; 
 	DialogueImplementation di;
 	GameObject gameInfo; 
+	GameObject textbox;
 	GameInfo gi;
+	DialogueVisuals dv;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +25,8 @@ public class AStageInputs: MonoBehaviour {
 		di = GetComponent<DialogueImplementation> (); 
 		gameInfo = GameObject.Find ("GameInfo");
 		gi = gameInfo.GetComponent<GameInfo> ();
+		textbox = GameObject.Find ("TextBox");
+		dv = textbox.GetComponent<DialogueVisuals> ();
 		
 	}
 	
@@ -54,6 +58,7 @@ public class AStageInputs: MonoBehaviour {
 	{
 		if (Input.GetButtonDown (aButton)) 
 		{
+			dv.changeColor (playersTurn);
 			if (A) 
 			{
 				if (!gi.takenAbilities.Contains (Ability.Type.Lunge)) 
@@ -61,6 +66,33 @@ public class AStageInputs: MonoBehaviour {
 					di.SelectOption00 ();
 					{
 						POCLibrary.AddLungeToList (playersTurn);  
+					}
+				}
+
+				if (playersTurn == 1) 
+				{
+					dv.changeExpression (1, "Happy");
+					dv.changeExpression (2, "Angry");
+				}
+
+				if (playersTurn == 2) 
+				{
+					if (gi.takenAbilities.Contains (Ability.Type.Fireball)) 
+					{
+						dv.changeExpression (1, "Angry");
+						dv.changeExpression (2, "KnifeHeart");
+					}
+
+					if (gi.takenAbilities.Contains (Ability.Type.Shield)) 
+					{
+						dv.changeExpression (1, "EyeRoll");
+						dv.changeExpression (2, "Happy");
+					}
+
+					if (gi.takenAbilities.Contains (Ability.Type.Sing)) 
+					{
+						dv.changeExpression (1, "Sulk");
+						dv.changeExpression (2, "Happy");
 					}
 				}
 			}
@@ -71,6 +103,7 @@ public class AStageInputs: MonoBehaviour {
 	{
 		if (Input.GetButtonDown (bButton)) 
 		{
+			dv.changeColor (playersTurn);
 			if (A) 
 			{
 				if (!gi.takenAbilities.Contains (Ability.Type.Fireball)) 
@@ -78,6 +111,33 @@ public class AStageInputs: MonoBehaviour {
 					di.SelectOption01 ();
 					{
 						POCLibrary.AddFireballToList (playersTurn);  
+					}
+				}
+
+				if (playersTurn == 1) 
+				{
+					dv.changeExpression (1, "KnifeHeart");
+					dv.changeExpression (2, "Sulk");
+				}
+
+				if (playersTurn == 2) 
+				{
+					if (gi.takenAbilities.Contains (Ability.Type.Lunge)) 
+					{
+						dv.changeExpression (1, "Angry");
+						dv.changeExpression (2, "KnifeHeart");
+					}
+
+					if (gi.takenAbilities.Contains (Ability.Type.Shield)) 
+					{
+						dv.changeExpression (1, "EyeRoll");
+						dv.changeExpression (2, "Happy");
+					}
+
+					if (gi.takenAbilities.Contains (Ability.Type.Sing)) 
+					{
+						dv.changeExpression (1, "Sulk");
+						dv.changeExpression (2, "Happy");
 					}
 				}
 			}
@@ -88,6 +148,7 @@ public class AStageInputs: MonoBehaviour {
 	{
 		if (Input.GetButtonDown (xButton)) 
 		{
+			dv.changeColor (playersTurn);
 			if (A) 
 			{
 				if (!gi.takenAbilities.Contains (Ability.Type.Shield)) 
@@ -97,12 +158,40 @@ public class AStageInputs: MonoBehaviour {
 						POCLibrary.AddShieldToList (playersTurn);  
 					}
 				}
+
+				if (playersTurn == 1) 
+				{
+					dv.changeExpression (1, "EyeRoll");
+					dv.changeExpression (2, "Angry");
+				}
+
+				if (playersTurn == 2) 
+				{
+					if (gi.takenAbilities.Contains (Ability.Type.Lunge)) 
+					{
+						dv.changeExpression (1, "Angry");
+						dv.changeExpression (2, "KnifeHeart");
+					}
+
+					if (gi.takenAbilities.Contains (Ability.Type.Fireball)) 
+					{
+						dv.changeExpression (1, "EyeRoll");
+						dv.changeExpression (2, "Happy");
+					}
+
+					if (gi.takenAbilities.Contains (Ability.Type.Sing)) 
+					{
+						dv.changeExpression (1, "Sulk");
+						dv.changeExpression (2, "Happy");
+					}
+				}
 			}
 		}
 	}
 
 	void pressY ()
 	{
+		dv.changeColor (playersTurn);
 		if (Input.GetButtonDown (yButton)) 
 		{
 			if (A) 
@@ -112,6 +201,33 @@ public class AStageInputs: MonoBehaviour {
 					di.SelectOption03 ();
 					{
 						POCLibrary.AddSingToList (playersTurn);  
+					}
+				}
+
+				if (playersTurn == 1) 
+				{
+					dv.changeExpression (1, "KnifeHeart");
+					dv.changeExpression (2, "EyeRoll");
+				}
+
+				if (playersTurn == 2) 
+				{
+					if (gi.takenAbilities.Contains (Ability.Type.Lunge)) 
+					{
+						dv.changeExpression (1, "Angry");
+						dv.changeExpression (2, "KnifeHeart");
+					}
+
+					if (gi.takenAbilities.Contains (Ability.Type.Fireball)) 
+					{
+						dv.changeExpression (1, "EyeRoll");
+						dv.changeExpression (2, "Happy");
+					}
+
+					if (gi.takenAbilities.Contains (Ability.Type.Shield)) 
+					{
+						dv.changeExpression (1, "Sulk");
+						dv.changeExpression (2, "Happy");
 					}
 				}
 			}
