@@ -32,6 +32,10 @@ public class HallwayRunManager : MonoBehaviour {
         playerMidpoint.z = -10f;
         Camera.main.transform.position = playerMidpoint;
         Camera.main.orthographicSize = Vector3.Distance(players[0].transform.position, players[1].transform.position);
+        if(Camera.main.orthographicSize < 5)
+        {
+            Camera.main.orthographicSize = 5;
+        }
         //Debug.Log("Distance Between Players is equal to " + Vector3.Distance(players[0].transform.position, players[1].transform.position));
     }
 }
