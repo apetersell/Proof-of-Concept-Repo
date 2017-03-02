@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Dumb Stuff Andrew Tried\StringsToDisplay.cs" />
      <Compile Include="Assets\Scripts\Dumb Stuff Andrew Tried\TextBoxScript.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\HallwayRunManager.cs" />
      <Compile Include="Assets\Scripts\POCLibrary.cs" />
      <Compile Include="Assets\Scripts\ScriptsFromProto\Abilities\Ability.cs" />
      <Compile Include="Assets\Scripts\ScriptsFromProto\Abilities\Attack.cs" />
@@ -73,6 +74,7 @@
      <Compile Include="Assets\Scripts\ScriptsFromProto\ToyGeneratorScript.cs" />
      <Compile Include="Assets\Scripts\ScriptsFromProto\ToySceneManager.cs" />
      <Compile Include="Assets\Scripts\ScriptsFromProto\TransitionRoomManager.cs" />
+     <Compile Include="Assets\Scripts\StudentSpawner.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
