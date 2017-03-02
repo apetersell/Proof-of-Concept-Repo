@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Dialogue\DialogueImplementation.cs" />
      <Compile Include="Assets\Scripts\Dialogue\OptionButton.cs" />
      <Compile Include="Assets\Scripts\Dialogue\SimpleJSON.cs" />
+     <Compile Include="Assets\Scripts\DialogueVisuals.cs" />
      <Compile Include="Assets\Scripts\Dumb Stuff Andrew Tried\DetermineTextDisplay.cs" />
      <Compile Include="Assets\Scripts\Dumb Stuff Andrew Tried\GenerateText.cs" />
      <Compile Include="Assets\Scripts\Dumb Stuff Andrew Tried\StringsToDisplay.cs" />
