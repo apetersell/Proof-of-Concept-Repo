@@ -13,6 +13,7 @@ public class DialogueImplementation : MonoBehaviour
 	public GameObject[] optionButtons;
 	public TextAsset defaultDialogue;
 	bool scrolling;
+    GameObject gameInfo;
 
 	void Awake()
 	{
@@ -27,6 +28,8 @@ public class DialogueImplementation : MonoBehaviour
 		{
 			textToRun = defaultDialogue.text;
 		}
+
+        gameInfo = GameObject.Find("GameInfo");
 	}
 
 	public string Parse(string characterName, string line)
@@ -72,6 +75,7 @@ public class DialogueImplementation : MonoBehaviour
 	{
         //Global.textbox.Hide();
         //uiText.text = "";
+        //gameInfo.GetComponent<GameInfo>().
         SceneManager.LoadScene("HallwayRun");
 		yield break;
 	}

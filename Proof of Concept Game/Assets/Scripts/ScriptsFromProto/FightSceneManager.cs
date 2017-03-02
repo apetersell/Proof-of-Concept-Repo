@@ -29,21 +29,24 @@ public class FightSceneManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		gameInfo = GameObject.FindGameObjectWithTag ("GameInfo");
-		InitializeSpriteDict ();
-		InitializePlayers ();
+        Debug.Log("awake");
+		gameInfo = GameObject.Find("GameInfo");
+        Debug.Log("set game info");
+        InitializeSpriteDict ();
+        Debug.Log("initialized dict");
+        InitializePlayers ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Reset")) {
-			if (Input.GetButton("HardReset")){
-				Destroy(gameInfo);
-				SceneManager.LoadScene("toyRoom");
-			} else {
-				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-			}
-		}
+		//if (Input.GetButtonDown("Reset")) {
+		//	if (Input.GetButton("HardReset")){
+		//		Destroy(gameInfo);
+		//		SceneManager.LoadScene("toyRoom");
+		//	} else {
+		//		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		//	}
+		//}
 	}
 
 
@@ -64,6 +67,17 @@ public class FightSceneManager : MonoBehaviour {
 	}
 
 	void InitializePlayer(GameObject player, int playerNum){
+        int oneAbilityNum = 0;
+        int twoAbilityNum = 0;
+        if (SceneManager.GetActiveScene().name == "HallwayRun" )
+        {
+            oneAbilityNum = 0;
+            twoAbilityNum = 0;
+        }
+        else
+        {
+            twoAbilityNum = oneAbilityNum + 1;
+        }
 		Sprite playerSprite;
 		RuntimeAnimatorController playerAnim;
 		List<Ability.Type> abilityList;
@@ -99,10 +113,10 @@ public class FightSceneManager : MonoBehaviour {
 		player.GetComponent<Animator> ().runtimeAnimatorController = playerAnim;
 		pc.abilityList = abilityList;
 		Sprite spriteA1;
-		spriteDict.TryGetValue (abilityList [0], out spriteA1);
+		spriteDict.TryGetValue (abilityList [oneAbilityNum], out spriteA1);
 		cooldownUIA1.GetComponent<SpriteRenderer> ().sprite = spriteA1;
 		Sprite spriteA2;
-		spriteDict.TryGetValue (abilityList [1], out spriteA2);
+		spriteDict.TryGetValue (abilityList [twoAbilityNum], out spriteA2);
 		cooldownUIA2.GetComponent<SpriteRenderer> ().sprite = spriteA2;
 	}
 

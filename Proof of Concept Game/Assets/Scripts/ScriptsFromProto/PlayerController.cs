@@ -120,16 +120,16 @@ public class PlayerController : MonoBehaviour {
 		if (basicAttackCooldownCounter > 0) {
 			basicAttackCooldownCounter -= Time.deltaTime;
 		}
-		else if (Input.GetButtonDown("BasicAttack_P" + playerNum)){
+		else if (Input.GetButtonDown("A Button_P" + playerNum)){
 			basicAttackCooldownCounter = DoAbility (Ability.Type.BasicAttack);
 		}
 
 		if (inFightScene) {
-			if (Input.GetButtonDown ("Ability1_P" + playerNum) && !ability1OnCooldown) {
+			if (Input.GetButtonDown ("B Button_P" + playerNum) && !ability1OnCooldown) {
 				ability1CooldownCounter = DoAbility (abilityList [0]);
 				ability1OnCooldown = true;
 				ability1BaseCooldown = ability1CooldownCounter;
-			} else if (Input.GetButtonDown ("Ability2_P" + playerNum) && !ability2OnCooldown) {
+			} else if (Input.GetButtonDown ("Y Button_P" + playerNum) && !ability2OnCooldown) {
 				ability2CooldownCounter = DoAbility (abilityList [1]);
 				ability2OnCooldown = true;
 				ability2BaseCooldown = ability2CooldownCounter;
