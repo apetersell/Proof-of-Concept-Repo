@@ -90,7 +90,7 @@ public class FightSceneManager : MonoBehaviour {
 			cooldownUIA1 = cooldownUIP1A1;
 			cooldownUIA2 = cooldownUIP1A2;
 			if (gameInfo == null) {
-				abilityList = new List<Ability.Type> (){ Ability.Type.Fireball, Ability.Type.Lunge };
+				abilityList = new List<Ability.Type> (){ Ability.Type.Fireball};
 			} else {
 				abilityList = gameInfo.GetComponent<GameInfo> ().player1Abilities;
 			}
@@ -100,7 +100,7 @@ public class FightSceneManager : MonoBehaviour {
 			cooldownUIA1 = cooldownUIP2A1;
 			cooldownUIA2 = cooldownUIP2A2;
 			if (gameInfo == null) {
-				abilityList = new List<Ability.Type> (){ Ability.Type.Sing, Ability.Type.Shield };
+				abilityList = new List<Ability.Type> (){ Ability.Type.Lunge};
 			} else {
 				abilityList = gameInfo.GetComponent<GameInfo> ().player2Abilities;
 			}
