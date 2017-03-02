@@ -6,12 +6,22 @@ public class HallwayRunManager : MonoBehaviour {
 
     public float speed;
     GameObject[] players;
+    public float downVelocity;
 
 	// Use this for initialization
 	void Start () {
 
         players = GameObject.FindGameObjectsWithTag("Player");	
 	}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "OtherStudent")
+        {
+            Debug.Log("Is Touching");
+            other.GetComponent<Rigidbody2D>().velocity = new Vector3(0, downVelocity, 0);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
