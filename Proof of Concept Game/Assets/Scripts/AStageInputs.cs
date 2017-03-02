@@ -54,51 +54,67 @@ public class AStageInputs: MonoBehaviour {
 	{
 		if (Input.GetButtonDown (aButton)) 
 		{
-			di.SelectOption00 ();
 			if (A) 
 			{
-				POCLibrary.AddLungeToList (playersTurn);
+				if (!gi.takenAbilities.Contains (Ability.Type.Lunge)) 
+				{
+					di.SelectOption00 ();
+					{
+						POCLibrary.AddLungeToList (playersTurn);  
+					}
+				}
 			}
 		}
-
 	}
 
 	void pressB ()
 	{
-		if (Input.GetButtonDown (bButton))  
+		if (Input.GetButtonDown (bButton)) 
 		{
-			di.SelectOption01 ();
 			if (A) 
 			{
-				POCLibrary.AddFireballToList (playersTurn);
+				if (!gi.takenAbilities.Contains (Ability.Type.Fireball)) 
+				{
+					di.SelectOption01 ();
+					{
+						POCLibrary.AddFireballToList (playersTurn);  
+					}
+				}
 			}
 		}
-
 	}
 
 	void pressX ()
 	{
 		if (Input.GetButtonDown (xButton)) 
 		{
-			di.SelectOption02 ();
 			if (A) 
 			{
-				POCLibrary.AddShieldToList (playersTurn);
+				if (!gi.takenAbilities.Contains (Ability.Type.Shield)) 
+				{
+					di.SelectOption02 ();
+					{
+						POCLibrary.AddShieldToList (playersTurn);  
+					}
+				}
 			}
 		}
-
 	}
 
 	void pressY ()
 	{
 		if (Input.GetButtonDown (yButton)) 
 		{
-			di.SelectOption03 ();
 			if (A) 
 			{
-				POCLibrary.AddSingToList (playersTurn);
+				if (!gi.takenAbilities.Contains (Ability.Type.Sing)) 
+				{
+					di.SelectOption03 ();
+					{
+						POCLibrary.AddSingToList (playersTurn);  
+					}
+				}
 			}
-
 		}
 	}
 

@@ -21,6 +21,8 @@ public class POCLibrary : MonoBehaviour {
 	{
 		GameObject gameInfo = GameObject.Find ("GameInfo");
 		GameInfo gi = gameInfo.GetComponent<GameInfo> ();
+
+		gi.takenAbilities.Add (Ability.Type.Shield); 
 		if (playerNum == 1) 
 		{
 			gi.player1Abilities.Add (Ability.Type.Shield);
@@ -37,9 +39,11 @@ public class POCLibrary : MonoBehaviour {
 	{
 		GameObject gameInfo = GameObject.Find ("GameInfo");
 		GameInfo gi = gameInfo.GetComponent<GameInfo> ();
+
+		gi.takenAbilities.Add (Ability.Type.Lunge); 
 		if (playerNum == 1) 
 		{
-			gi.player1Abilities.Add (Ability.Type.Lunge); 
+			gi.player1Abilities.Add (Ability.Type.Lunge);
 		}
 
 		if (playerNum == 2) 
@@ -53,6 +57,8 @@ public class POCLibrary : MonoBehaviour {
 	{	
 		GameObject gameInfo = GameObject.Find ("GameInfo");
 		GameInfo gi = gameInfo.GetComponent<GameInfo> ();
+
+		gi.takenAbilities.Add (Ability.Type.Fireball);
 		if (playerNum == 1) 
 		{
 			gi.player1Abilities.Add(Ability.Type.Fireball);
@@ -69,6 +75,8 @@ public class POCLibrary : MonoBehaviour {
 	{
 		GameObject gameInfo = GameObject.Find ("GameInfo");
 		GameInfo gi = gameInfo.GetComponent<GameInfo> ();
+
+		gi.takenAbilities.Add (Ability.Type.Sing);
 		if (playerNum == 1) 
 		{
 			gi.player1Abilities.Add (Ability.Type.Sing);

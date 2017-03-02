@@ -6,11 +6,13 @@ public class GameInfo : MonoBehaviour {
 
 	public List<Ability.Type> player1Abilities;
 	public List<Ability.Type> player2Abilities;
+	public List<Ability.Type> takenAbilities;
 
 	// Use this for initialization
 	void Start () {
 		player1Abilities = new List<Ability.Type> ();
 		player2Abilities = new List<Ability.Type> ();
+		takenAbilities = new List<Ability.Type> (); 
 		DontDestroyOnLoad (gameObject);
 	}
 	
