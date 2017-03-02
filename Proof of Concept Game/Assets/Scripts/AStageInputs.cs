@@ -12,6 +12,7 @@ public class AStageInputs: MonoBehaviour {
 	public bool A = true; 
 	public bool A2;  
 	public bool A2Prime;  
+	public bool canSelect; 
 	DialogueImplementation di;
 	GameObject gameInfo; 
 	GameInfo gi;
@@ -28,11 +29,16 @@ public class AStageInputs: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		turnControls ();
-		pressA ();
-		pressB ();
-		pressX ();
-		pressY ();
+
+		if (canSelect == true) 
+		{
+			pressA ();
+			pressB ();
+			pressX ();
+			pressY (); 
+		}
 		changeTurn ();
+		limitSelect ();
 
 	}
 
@@ -101,6 +107,19 @@ public class AStageInputs: MonoBehaviour {
 		if (playersTurn == 1 && gi.player1Abilities.Count > 0) 
 		{
 			playersTurn = 2;
+		}
+	}
+
+	void limitSelect ()
+	{
+		if (di.optionButtons [1].activeSelf == false) 
+		{
+			canSelect = false;
+		}
+
+		if (di.optionButtons [1].activeSelf == true) 
+		{
+			canSelect = true;
 		}
 	}
 
