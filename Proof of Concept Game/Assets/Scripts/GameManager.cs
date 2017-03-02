@@ -6,17 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-    public GameObject player1;
-    public GameObject player2;
+//    public GameObject player1;
+//    public GameObject player2;
 
-    public GameObject gameInfo;
+//    public GameObject gameInfo;
+	GameInfo gi;
 
-    private Dictionary<string, Ability.Type> toyAbilityDict;
+//    private Dictionary<string, Ability.Type> toyAbilityDict;
 
     // Use this for initialization
     void Start () {
 
-        CreateToyAbilityDict();
+//        CreateToyAbilityDict();
+		gi = GetComponent<GameInfo>();
 
     }
 	
@@ -25,85 +27,89 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
-    void CreateToyAbilityDict()
+//    void CreateToyAbilityDict()
+//    {
+//        toyAbilityDict = new Dictionary<string, Ability.Type>();
+//
+//        toyAbilityDict.Add("Cat", Ability.Type.Shield);
+//        toyAbilityDict.Add("Dog", Ability.Type.Lunge);
+//        toyAbilityDict.Add("Kazoo", Ability.Type.Sing);
+//        toyAbilityDict.Add("Calculator", Ability.Type.Fireball);
+//    }
+
+//    void SetGameInfo()
+//    {
+//        
+////        gi.player1Abilities = GetAbilityListFromToyList(player1.GetComponent<PlayerController>().playerToys);
+////        gi.player2Abilities = GetAbilityListFromToyList(player2.GetComponent<PlayerController>().playerToys);
+//    }
+//
+//    List<Ability.Type> GetAbilityListFromToyList(List<string> toylist)
+//    {
+//        List<Ability.Type> abilityList = new List<Ability.Type>();
+//        foreach (string toy in toylist)
+//        {
+//            Ability.Type ability;
+//            toyAbilityDict.TryGetValue(toy, out ability);
+//            abilityList.Add(ability);
+//        }
+//        return abilityList;
+//    }
+
+	public void AddShieldToList(int playerNum)
     {
-        toyAbilityDict = new Dictionary<string, Ability.Type>();
+		if (playerNum == 1) 
+		{
+			gi.player1Abilities.Add (Ability.Type.Shield);
+		}
 
-        toyAbilityDict.Add("Cat", Ability.Type.Shield);
-        toyAbilityDict.Add("Dog", Ability.Type.Lunge);
-        toyAbilityDict.Add("Kazoo", Ability.Type.Sing);
-        toyAbilityDict.Add("Calculator", Ability.Type.Fireball);
-    }
-
-    void SetGameInfo()
-    {
-        GameInfo gi = gameInfo.GetComponent<GameInfo>();
-        gi.player1Abilities = GetAbilityListFromToyList(player1.GetComponent<PlayerController>().playerToys);
-        gi.player2Abilities = GetAbilityListFromToyList(player2.GetComponent<PlayerController>().playerToys);
-    }
-
-    List<Ability.Type> GetAbilityListFromToyList(List<string> toylist)
-    {
-        List<Ability.Type> abilityList = new List<Ability.Type>();
-        foreach (string toy in toylist)
-        {
-            Ability.Type ability;
-            toyAbilityDict.TryGetValue(toy, out ability);
-            abilityList.Add(ability);
-        }
-        return abilityList;
-    }
-
-    public void AddShieldToList()
-    {
-        if(player1.GetComponent<PlayerController>().playerToys.Count == 0)
-        {
-            player1.GetComponent<PlayerController>().playerToys.Add("Cat");
-        }
-        if (player2.GetComponent<PlayerController>().playerToys.Count == 1)
-        {
-            player2.GetComponent<PlayerController>().playerToys.Add("Cat");
-        }
-
-    }
-
-    public void AddLungeToList()
-    {
-
-        if (player1.GetComponent<PlayerController>().playerToys.Count == 0)
-        {
-            player1.GetComponent<PlayerController>().playerToys.Add("Dog");
-        }
-        if (player2.GetComponent<PlayerController>().playerToys.Count == 1)
-        {
-            player2.GetComponent<PlayerController>().playerToys.Add("Dog");
-        }
+		if (playerNum == 2) 
+		{
+			gi.player2Abilities.Add (Ability.Type.Shield);
+		}
 
     }
 
-    public void AddFireballToList()
+	public void AddLungeToList(int playerNum)
     {
-        if (player1.GetComponent<PlayerController>().playerToys.Count == 0)
-        {
-            player1.GetComponent<PlayerController>().playerToys.Add("Calculator");
-        }
-        if (player2.GetComponent<PlayerController>().playerToys.Count == 1)
-        {
-            player2.GetComponent<PlayerController>().playerToys.Add("Calculator");
-        }
+
+		if (playerNum == 1) 
+		{
+			gi.player1Abilities.Add (Ability.Type.Lunge);
+		}
+
+		if (playerNum == 2) 
+		{
+			gi.player2Abilities.Add (Ability.Type.Lunge);
+		}
 
     }
 
-    public void AddSingToList()
+	public void AddFireballToList(int playerNum)
     {
-        if (player1.GetComponent<PlayerController>().playerToys.Count == 0)
-        {
-            player1.GetComponent<PlayerController>().playerToys.Add("Kazoo");
-        }
-        if (player2.GetComponent<PlayerController>().playerToys.Count == 1)
-        {
-            player2.GetComponent<PlayerController>().playerToys.Add("Kazoo");
-        }
+		if (playerNum == 1) 
+		{
+			gi.player1Abilities.Add (Ability.Type.Fireball);
+		}
+
+		if (playerNum == 2) 
+		{
+			gi.player2Abilities.Add (Ability.Type.Fireball);
+		}
+
+    }
+
+	public void AddSingToList(int playerNum)
+    {
+		if (playerNum == 1) 
+		{
+			gi.player1Abilities.Add (Ability.Type.Sing);
+		}
+
+		if (playerNum == 2) 
+		{
+			gi.player2Abilities.Add (Ability.Type.Sing);
+		}
 
     }
 }

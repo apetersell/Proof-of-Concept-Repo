@@ -16,6 +16,9 @@ public class GameInfo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+//		player1Abilities = POCLibrary.player1Abilities;
+//		player2Abilities = POCLibrary.player2Abilities;
 		if (Input.GetButtonDown ("ToggleFullscreen")) {
 			Screen.fullScreen = !Screen.fullScreen;
 		}
