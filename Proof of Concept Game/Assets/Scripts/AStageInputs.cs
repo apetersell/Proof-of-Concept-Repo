@@ -13,11 +13,15 @@ public class AStageInputs: MonoBehaviour {
 	public bool A2;  
 	public bool A2Prime;  
 	DialogueImplementation di;
+	GameObject gameInfo; 
+	GameInfo gi;
 
 	// Use this for initialization
 	void Start () {
 
 		di = GetComponent<DialogueImplementation> (); 
+		gameInfo = GameObject.Find ("GameInfo");
+		gi = gameInfo.GetComponent<GameInfo> ();
 		
 	}
 	
@@ -28,6 +32,7 @@ public class AStageInputs: MonoBehaviour {
 		pressB ();
 		pressX ();
 		pressY ();
+		changeTurn ();
 
 	}
 
@@ -48,7 +53,6 @@ public class AStageInputs: MonoBehaviour {
 			{
 				POCLibrary.AddLungeToList (playersTurn);
 			}
-			changeTurn ();
 		}
 
 	}
@@ -62,7 +66,6 @@ public class AStageInputs: MonoBehaviour {
 			{
 				POCLibrary.AddFireballToList (playersTurn);
 			}
-			changeTurn ();
 		}
 
 	}
@@ -76,7 +79,6 @@ public class AStageInputs: MonoBehaviour {
 			{
 				POCLibrary.AddShieldToList (playersTurn);
 			}
-			changeTurn ();
 		}
 
 	}
@@ -90,20 +92,15 @@ public class AStageInputs: MonoBehaviour {
 			{
 				POCLibrary.AddSingToList (playersTurn);
 			}
-			changeTurn ();
+
 		}
 	}
 
 	void changeTurn ()
 	{
-		if (playersTurn == 1) 
+		if (playersTurn == 1 && gi.player1Abilities.Count > 0) 
 		{
 			playersTurn = 2;
-		}
-
-		if (playersTurn == 2) 
-		{
-			playersTurn = 1;
 		}
 	}
 
