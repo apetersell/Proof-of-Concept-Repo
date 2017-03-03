@@ -44,56 +44,56 @@ public class AStageInputs: MonoBehaviour {
 		changeTurn ();
 		limitSelect ();
 
+
 	}
 
 	void turnControls ()
 	{
-		aButton = "A Button_P" + playersTurn;
-		bButton = "B Button_P" + playersTurn;
-		xButton = "X Button_P" + playersTurn;
-		yButton = "Y Button_P" + playersTurn;
+			aButton = "A Button_P" + playersTurn;
+			bButton = "B Button_P" + playersTurn;
+			xButton = "X Button_P" + playersTurn;
+			yButton = "Y Button_P" + playersTurn;
 	}
 
 	void pressA ()
 	{
 		if (Input.GetButtonDown (aButton)) 
 		{
-			if (A) 
-			{
-				if (!gi.takenAbilities.Contains (Ability.Type.Lunge)) 
+			if (A) {
+				if (gi.takenAbilities.Count < 2) {
+					if (!gi.takenAbilities.Contains (Ability.Type.Lunge)) {
+						di.SelectOption00 ();
+						{
+							POCLibrary.AddLungeToList (playersTurn);
+							ColorChanger.changeColor (playersTurn);
+						}
+					}
+
+					if (playersTurn == 1) {
+						dv.changeExpression (1, "Happy");
+						dv.changeExpression (2, "Angry");
+					}
+
+					if (playersTurn == 2) {
+						if (gi.takenAbilities.Contains (Ability.Type.Fireball)) {
+							dv.changeExpression (1, "Angry");
+							dv.changeExpression (2, "KnifeHeart");
+						}
+
+						if (gi.takenAbilities.Contains (Ability.Type.Shield)) {
+							dv.changeExpression (1, "EyeRoll");
+							dv.changeExpression (2, "Happy");
+						}
+
+						if (gi.takenAbilities.Contains (Ability.Type.Sing)) {
+							dv.changeExpression (1, "Sulk");
+							dv.changeExpression (2, "Happy");
+						}
+					}
+				} 
+				else 
 				{
 					di.SelectOption00 ();
-					{
-						POCLibrary.AddLungeToList (playersTurn);
-						ColorChanger.changeColor (playersTurn);
-					}
-				}
-
-				if (playersTurn == 1) 
-				{
-					dv.changeExpression (1, "Happy");
-					dv.changeExpression (2, "Angry");
-				}
-
-				if (playersTurn == 2) 
-				{
-					if (gi.takenAbilities.Contains (Ability.Type.Fireball)) 
-					{
-						dv.changeExpression (1, "Angry");
-						dv.changeExpression (2, "KnifeHeart");
-					}
-
-					if (gi.takenAbilities.Contains (Ability.Type.Shield)) 
-					{
-						dv.changeExpression (1, "EyeRoll");
-						dv.changeExpression (2, "Happy");
-					}
-
-					if (gi.takenAbilities.Contains (Ability.Type.Sing)) 
-					{
-						dv.changeExpression (1, "Sulk");
-						dv.changeExpression (2, "Happy");
-					}
 				}
 			}
 		}
@@ -236,20 +236,23 @@ public class AStageInputs: MonoBehaviour {
 
 	void changeTurn ()
 	{
-		if (playersTurn == 1 && gi.player1Abilities.Count > 0) 
+		if (A) 
 		{
-			playersTurn = 2;
+			if (playersTurn == 1 && gi.player1Abilities.Count > 0) 
+			{
+				playersTurn = 2;
+			}
 		}
 	}
 
 	void limitSelect ()
 	{
-		if (di.optionButtons [1].activeSelf == false) 
+		if (di.optionButtons [0].activeSelf == false) 
 		{
 			canSelect = false;
 		}
 
-		if (di.optionButtons [1].activeSelf == true) 
+		if (di.optionButtons [0].activeSelf == true) 
 		{
 			canSelect = true;
 		}
