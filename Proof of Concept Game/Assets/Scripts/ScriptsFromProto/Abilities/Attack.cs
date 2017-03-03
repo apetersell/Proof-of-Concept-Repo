@@ -22,7 +22,14 @@ public class Attack : Ability {
 	}
 
 	protected virtual void HitPlayer(GameObject player){
-		player.GetComponent<PlayerController> ().TakeHit (damage, baseKnockback, knockbackGrowth, GetDirectionHit(player));
+        if(player.gameObject.tag == "Player")
+        {
+            player.GetComponent<PlayerController>().TakeHit(damage, baseKnockback, knockbackGrowth, GetDirectionHit(player));
+        }
+        if(player.gameObject.tag == "OtherStudent")
+        {
+            player.GetComponent<SpawnedStudentScript>().TakeHit(damage, baseKnockback, knockbackGrowth, GetDirectionHit(player));
+        }
 
 	}
 
@@ -50,5 +57,10 @@ public class Attack : Ability {
 
 			}
 		}
+        if(collidedObject.tag == "OtherStudent")
+        {
+            SpawnedStudentScript ss = collidedObject.GetComponent<SpawnedStudentScript>();
+            HitPlayer(collidedObject);
+        }
 	}
 }

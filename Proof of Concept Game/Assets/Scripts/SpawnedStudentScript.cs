@@ -31,11 +31,10 @@ public class SpawnedStudentScript : MonoBehaviour {
         }
     }
 
-    protected virtual void HitPlayer(GameObject player)
-    {
-        player.GetComponent<PlayerController>().TakeHit(damage, baseKnockback, knockbackGrowth, GetDirectionHit(player));
-
-    }
+    //protected virtual void HitPlayer(GameObject player)
+    //{
+    //    player.GetComponent<PlayerController>().TakeHit(damage, baseKnockback, knockbackGrowth, GetDirectionHit(player));
+    //}
 
     protected virtual Vector3 GetDirectionHit(GameObject playerHit)
     {
@@ -48,7 +47,7 @@ public class SpawnedStudentScript : MonoBehaviour {
         if (collidedObject.tag == "OtherStudent")
         {
             PlayerController pc = collidedObject.GetComponent<PlayerController>();
-            HitPlayer(collidedObject);
+            //pc.HitPlayer(collidedObject);
         }
     }
 
