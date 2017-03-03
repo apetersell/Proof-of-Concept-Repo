@@ -93,7 +93,16 @@ public class PlayerController : MonoBehaviour {
 		if (direction.x * transform.localScale.x > 0) {
 			transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
 		}
-	}
+        if (direction.y * transform.localScale.y > 0)
+        {
+            Debug.Log("Player" + playerNum + " is Going Up");
+        }
+        if (direction.y * transform.localScale.y < 0)
+        {
+            Debug.Log("Player" + playerNum + " is Goin Down");
+        }
+
+    }
 
 	void ProcessAbilityCooldowns(){
 		if (abilityList != null) {
