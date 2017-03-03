@@ -5,6 +5,7 @@ using UnityEngine;
 public class AStageInputs: MonoBehaviour {
 
 	public int playersTurn = 1; 
+	public int lastPlayersTurn;
 	private string aButton;
 	private string bButton;
 	private string xButton;
@@ -49,10 +50,18 @@ public class AStageInputs: MonoBehaviour {
 
 	void turnControls ()
 	{
+		if (playersTurn < 3) {
 			aButton = "A Button_P" + playersTurn;
 			bButton = "B Button_P" + playersTurn;
 			xButton = "X Button_P" + playersTurn;
 			yButton = "Y Button_P" + playersTurn;
+		} else 
+		{
+			aButton = "A Button_P" + lastPlayersTurn;
+			bButton = "B Button_P" + lastPlayersTurn;
+			xButton = "X Button_P" + lastPlayersTurn;
+			yButton = "Y Button_P" + lastPlayersTurn;
+		}
 	}
 
 	void pressA ()
@@ -94,6 +103,7 @@ public class AStageInputs: MonoBehaviour {
 				else 
 				{
 					di.SelectOption00 ();
+					ColorChanger.changeColor (playersTurn);
 				}
 			}
 		}
@@ -241,6 +251,12 @@ public class AStageInputs: MonoBehaviour {
 			if (playersTurn == 1 && gi.player1Abilities.Count > 0) 
 			{
 				playersTurn = 2;
+			}
+
+			if (playersTurn == 2 && gi.takenAbilities.Count == 2)
+			{
+				playersTurn = 3;
+				lastPlayersTurn = 2;
 			}
 		}
 	}
