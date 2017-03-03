@@ -18,7 +18,7 @@ public class HallwayRunManager : MonoBehaviour {
     {
         if (other.gameObject.tag == "OtherStudent")
         {
-            Debug.Log("Is Touching");
+            //Debug.Log("Is Touching");
             other.GetComponent<Rigidbody2D>().velocity = new Vector3(0, downVelocity, 0);
         }
     }
