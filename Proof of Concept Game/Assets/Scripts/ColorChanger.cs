@@ -16,10 +16,15 @@ public class ColorChanger : MonoBehaviour {
 	public Vector3 p2ArrowPos; 
 	public static int colorNum;
 	public bool flipOnSwitch; 
-	public bool choiceButtons;  
+	public bool choiceButtons; 
+	GameInfo gi;
+	GameObject gameInfo; 
 
 	// Use this for initialization
 	void Start () {
+
+		gameInfo = GameObject.Find ("GameInfo"); 
+		gi = gameInfo.GetComponent<GameInfo> (); 
 
 		img = GetComponent<Image> ();
 		rt = GetComponent<RectTransform> ();
@@ -37,15 +42,30 @@ public class ColorChanger : MonoBehaviour {
 		arrowDeets ();
 
 		img.color = currentColor;
+		if (colorNum == 3)
+			{
+				currentColor = neutral; 
+			}
 
 		if (choiceButtons == true) {
-			if (colorNum == 1) {
-				currentColor = p2Color;
-			}
+			if (AStageInputs.A) 
+			{
 
-			if (colorNum == 2) {
-				currentColor = p1Color;
+				if (colorNum == 1) {
+					currentColor = p2Color;
+				}
+
+				if (colorNum == 2) {
+					currentColor = p1Color;
+				}
+
+				if (colorNum == 2 && gi.takenAbilities.Count == 2) 
+				{
+					currentColor = p2Color; 
+				}
 			}
+				
+				
 		}
 
 		if (choiceButtons == false) 
@@ -86,6 +106,11 @@ public class ColorChanger : MonoBehaviour {
 				transform.position = p2ArrowPos;
 				sr.color = p2Color;
 				sr.flipX = true;
+			}
+
+			if (colorNum == 3) 
+			{
+				sr.color = new Color (0, 0, 0, 0);
 			}
 		}
 

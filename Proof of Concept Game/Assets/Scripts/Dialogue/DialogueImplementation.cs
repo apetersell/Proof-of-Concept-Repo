@@ -68,7 +68,10 @@ public class DialogueImplementation : MonoBehaviour
 	public bool InputNext()
 	{
 //		return Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown (0); 
-		return Input.GetButtonDown("Start Button_P1") || Input.GetButtonDown ("Start Button_P2");
+		return Input.GetButtonDown ("Start Button_P1") ||
+		Input.GetButtonDown ("Start Button_P2") ||
+		Input.GetButtonDown ("A Button_P1") ||
+		Input.GetButtonDown ("A Button_P2");
 	}
 
 	public IEnumerator EndText()
