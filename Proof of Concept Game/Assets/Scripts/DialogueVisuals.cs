@@ -5,10 +5,6 @@ using UnityEngine.UI;
 
 public class DialogueVisuals : MonoBehaviour {
 
-	public Color p1Color;
-	public Color p2Color;
-	public Color neutral;
-	public Color currentColor; 
 	public Sprite ponytailNeutral; 
 	public Sprite ponytailAngry;
 	public Sprite ponytailEyeRoll;
@@ -25,22 +21,10 @@ public class DialogueVisuals : MonoBehaviour {
 	GameObject pigtail; 
 	SpriteRenderer ponysr;
 	SpriteRenderer pigsr;
-	public GameObject aOption;
-	public GameObject bOption;
-	public GameObject xOption;
-	public GameObject yOption;
-	public GameObject tail;
-	Image aImg;
-	Image bImg;
-	Image xImg;
-	Image yImg;
-	Image tbImg;
-	Image tailImg;
 
 	// Use this for initialization
 	void Start () {
 
-			currentColor = p2Color;
 		
 	}
 	
@@ -50,27 +34,7 @@ public class DialogueVisuals : MonoBehaviour {
 		ponytail = GameObject.Find ("PonyTail");
 		ponysr = ponytail.GetComponent<SpriteRenderer> ();
 		pigtail = GameObject.Find ("PigTail");
-		pigsr = pigtail.GetComponent<SpriteRenderer> ();
-		aOption = GameObject.Find ("A Option");
-		aImg = aOption.GetComponent<Image> ();
-		bOption = GameObject.Find ("B Option");
-		bImg = bOption.GetComponent<Image> ();
-		xOption = GameObject.Find ("X Option");
-		xImg = xOption.GetComponent<Image> ();
-		yOption = GameObject.Find ("Y Option");
-		yImg = yOption.GetComponent<Image> ();
-		tbImg = GetComponent<Image> ();
-		tail = GameObject.Find ("Bubble");
-		tailImg = tail.GetComponent<Image> ();
-
-
-		aImg.color = currentColor; 
-		bImg.color = currentColor;
-		xImg.color = currentColor;
-		yImg.color = currentColor;
-		tbImg.color = currentColor;
-		tbImg.color = currentColor;
-		tailImg.color = currentColor; 
+		pigsr = pigtail.GetComponent<SpriteRenderer> ();	
 		
 	}
 
@@ -145,16 +109,4 @@ public class DialogueVisuals : MonoBehaviour {
 		}
 	}
 
-	public void changeColor (int playerNum)
-	{
-		if (playerNum == 1) 
-		{
-			currentColor = p1Color;
-		} 
-
-		if (playerNum == 2) 
-		{
-			currentColor = p2Color;
-		}
-	}
 }

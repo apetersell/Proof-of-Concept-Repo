@@ -58,14 +58,14 @@ public class AStageInputs: MonoBehaviour {
 	{
 		if (Input.GetButtonDown (aButton)) 
 		{
-			dv.changeColor (playersTurn);
 			if (A) 
 			{
 				if (!gi.takenAbilities.Contains (Ability.Type.Lunge)) 
 				{
 					di.SelectOption00 ();
 					{
-						POCLibrary.AddLungeToList (playersTurn);  
+						POCLibrary.AddLungeToList (playersTurn);
+						ColorChanger.changeColor (playersTurn);
 					}
 				}
 
@@ -103,14 +103,14 @@ public class AStageInputs: MonoBehaviour {
 	{
 		if (Input.GetButtonDown (bButton)) 
 		{
-			dv.changeColor (playersTurn);
 			if (A) 
 			{
 				if (!gi.takenAbilities.Contains (Ability.Type.Fireball)) 
 				{
 					di.SelectOption01 ();
 					{
-						POCLibrary.AddFireballToList (playersTurn);  
+						POCLibrary.AddFireballToList (playersTurn); 
+						ColorChanger.changeColor (playersTurn);
 					}
 				}
 
@@ -148,14 +148,14 @@ public class AStageInputs: MonoBehaviour {
 	{
 		if (Input.GetButtonDown (xButton)) 
 		{
-			dv.changeColor (playersTurn);
 			if (A) 
 			{
 				if (!gi.takenAbilities.Contains (Ability.Type.Shield)) 
 				{
 					di.SelectOption02 ();
 					{
-						POCLibrary.AddShieldToList (playersTurn);  
+						POCLibrary.AddShieldToList (playersTurn); 
+						ColorChanger.changeColor (playersTurn);
 					}
 				}
 
@@ -191,7 +191,6 @@ public class AStageInputs: MonoBehaviour {
 
 	void pressY ()
 	{
-		dv.changeColor (playersTurn);
 		if (Input.GetButtonDown (yButton)) 
 		{
 			if (A) 
@@ -200,7 +199,8 @@ public class AStageInputs: MonoBehaviour {
 				{
 					di.SelectOption03 ();
 					{
-						POCLibrary.AddSingToList (playersTurn);  
+						POCLibrary.AddSingToList (playersTurn);
+						ColorChanger.changeColor (playersTurn);
 					}
 				}
 
