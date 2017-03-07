@@ -40,7 +40,7 @@ public class DialogueImplementation : MonoBehaviour
 	public IEnumerator Say(string characterName, string text)
 	{
 		uiText.text = "";
-		string textToScroll = characterName + ": " + text;
+		string textToScroll = text;
 		//CharacterData characterData = Global.constants.GetCharacterData(characterName);
 		//Global.textbox.Say(characterData, text);
 		const float timePerChar = .05f;
