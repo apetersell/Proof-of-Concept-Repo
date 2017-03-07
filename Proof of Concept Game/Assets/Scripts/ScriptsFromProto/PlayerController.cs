@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour {
 
 
 	float BasicAttack(){
-		GameObject basicAttack = Instantiate (basicAttackPrefab, transform, false);
+		GameObject basicAttack = Instantiate (basicAttackPrefab, transform, false) as GameObject;
 		BasicAttack ba = basicAttack.GetComponent<BasicAttack> ();
 		ba.Init (gameObject);
 		return ba.cooldown;
@@ -196,7 +196,7 @@ public class PlayerController : MonoBehaviour {
 	float ThrowFireball(){
 		float direction = -1 * Mathf.Sign (transform.localScale.x);
 		Vector3 fireballOffset = direction * 1.5f * Vector3.right;
-		GameObject fireball = Instantiate (fireballPrefab, transform.position + fireballOffset, Quaternion.identity);
+		GameObject fireball = Instantiate (fireballPrefab, transform.position + fireballOffset, Quaternion.identity) as GameObject;
 		Fireball fc = fireball.GetComponent<Fireball> ();
 		fc.Init (gameObject);
 
@@ -204,21 +204,21 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	float Lunge(){
-		GameObject lunge = Instantiate (lungePrefab, transform, false);
+		GameObject lunge = Instantiate (lungePrefab, transform, false) as GameObject;
 		Lunge lun = lunge.GetComponent<Lunge> ();
 		lun.Init (gameObject);
 		return lun.cooldown;
 	}
 
 	float Sing(){
-		GameObject musicBubble = Instantiate (musicBubblePrefab, transform.position, Quaternion.identity);
+		GameObject musicBubble = Instantiate (musicBubblePrefab, transform.position, Quaternion.identity) as GameObject;
 		MusicBubble mb = musicBubble.GetComponent<MusicBubble> ();
 		mb.Init (gameObject);
 		return mb.cooldown;
 	}
 
 	float Shield(){
-		GameObject shield = Instantiate (shieldPrefab, transform, false);
+		GameObject shield = Instantiate (shieldPrefab, transform, false) as GameObject;
 		Shield sh = shield.GetComponent<Shield> ();
 		sh.Init (gameObject);
 		return sh.cooldown;
